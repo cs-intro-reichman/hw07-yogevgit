@@ -52,7 +52,7 @@ public class HashTagTokenizer {
         int N = hashtag.length();
 
         for (int i = 1; i <= N; i++) {
-            newword = newword + hashtag.charAt(i-1);
+            newword = newword +hashtag.charAt(i-1);
 			if (existInDictionary(newword, dictionary)==true) 
 			{
 				System.out.print(newword + " ");
