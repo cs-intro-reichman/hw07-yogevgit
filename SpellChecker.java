@@ -22,24 +22,16 @@ public class SpellChecker {
 		// Your code goes here
 		word1 = word1.toLowerCase();
 		word2 = word2.toLowerCase();
-		if (word2.length() == 0) 
-		{
-			return word1.length();	
-		}
-		if (word1.length() == 0) 
-		{
-			return word2.length();	
-		}
-		if (word1.charAt(0) == word2.charAt(0)) 
-		{
-			return levenshtein(tail(word1),tail(word2));	
-		}
-		else
-		{
-			return Math.min((levenshtein(tail(word1),word2)),Math.min((levenshtein(word1,tail(word2))),levenshtein(tail(word1),tail(word2)))) + 1;
+		if (word2.length() == 0) return word1.length();	
+		
+		if (word1.length() == 0) return word2.length();	
+		
+		if (word1.charAt(0) == word2.charAt(0)) return levenshtein(tail(word1),tail(word2));	
+		
+		else return Math.min((levenshtein(tail(word1),word2)),Math.min((levenshtein(word1,tail(word2))),levenshtein(tail(word1),tail(word2)))) + 1;
 
 
-		}
+		
 	}
 
 	public static String[] readDictionary(String fileName) {
@@ -47,7 +39,7 @@ public class SpellChecker {
 
 		In in = new In(fileName);
 
-		for (int i = 0;i < 3000 ;i++ ) 
+		for (int i = 0 ; i < 3000 ;i++ ) 
 		{
 			dictionary[i] = in.readLine();	
 		}
