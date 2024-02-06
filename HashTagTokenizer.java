@@ -55,8 +55,8 @@ public class HashTagTokenizer {
             newword = newword +hashtag.charAt(i-1);
 			if (existInDictionary(newword, dictionary)==true) 
 			{
+
 				System.out.println(newword);
-				
 				breakHashTag(hashtag.substring(i), dictionary);
 		
             }
